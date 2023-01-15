@@ -1,0 +1,199 @@
+:root {
+    --body-background-color: #E5E5E5;
+    --main-background-color: #3B3F45;
+    --header-background-color: #4A4F56;
+    --second-background-color: #9B96AC;
+    --third-background-color: #88839E;
+    --accent-background-color: #625E77;
+
+    --main-font-color: #FFFFFF;
+    --second-font-color: #FF8984;
+
+    --main-font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--body-background-color);
+
+    font-family: var(--main-font-family);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.17;
+    color: var(--main-font-color);
+}
+
+* {
+    transition: all .1s ease-in;
+}
+
+.visually-hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+
+.container {
+    max-width: 793px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--main-background-color);
+    margin-top: 50px;
+    box-shadow: rgba(7, 80, 238, 0.815) 0 10px 20px;
+    padding-bottom: 45px;
+}
+
+.main-header {
+    width: 100%;
+    color: var(--second-font-color);
+    text-align: center;
+
+    background-color: var(--header-background-color);
+}
+
+.main-title {
+    font-size: 24px;
+    font-weight: 700;
+    padding-top: 19px;
+    padding-bottom: 4px;
+}
+
+.main-title+p {
+    padding-bottom: 12px;
+}
+
+.diner-list {
+    max-width: 534px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.diner-item {
+    border-top: 3px solid var(--third-background-color);
+    border-bottom: 3px solid var(--third-background-color);
+    background-color: var(--third-background-color);
+}
+
+.diner-list .diner-item:nth-child(odd) {
+    background-color: var(--second-background-color);
+    border-top: 3px solid var(--second-background-color);
+    border-bottom: 3px solid var(--second-background-color);
+}
+
+.diner-item:hover,
+.diner-list .diner-item:nth-child(odd):hover {
+    background-color: var(--accent-background-color);
+    border-top: 3px solid var(--main-font-color);
+    border-bottom: 3px solid var(--main-font-color);
+}
+
+.invisible {
+    font-size: 11px;
+    visibility: hidden;
+}
+
+.diner-item:hover .invisible {
+    visibility: visible;
+}
+
+[type="checkbox"] {
+    width: 19px;
+    height: 19px;
+    margin-left: 10px;
+    margin-right: 18px;
+}
+
+button {
+    display: block;
+    max-width: 534px;
+    width: 100%;
+    margin: auto;
+    margin-top: 45px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: var(--header-background-color);
+    border: inherit;
+    color: var(--second-font-color);
+    font-size: 18px;
+}
+
+button:hover,
+button:focus {
+    background-color: var(--second-font-color);
+    font-weight: 700;
+    color: var(--main-background-color);
+}
+
+label {
+    display: flex;
+    align-items: center;
+
+    height: 45px;
+
+    padding-left: 12px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: var(--main-font-color);
+}
+
+.diner-item:active label {
+    background-color: #FF8984;
+}
+
+input {
+    display: none;
+}
+
+.mark {
+    display: inline-block;
+    position: relative;
+
+    width: 19px;
+    height: 19px;
+
+    background-color: var(--main-font-color);
+
+    margin-right: 16px;
+}
+
+.mark::before {
+    position: absolute;
+    content: "";
+    opacity: 0;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: inline-block;
+    width: 13px;
+    height: 11px;
+    background: url(../images/vector.svg) no-repeat;
+}
+
+input:checked+.mark::before {
+    opacity: 1;
+}
+
+.diner-list .diner-item:nth-child(odd) input:checked~.invisible,
+.diner-list .diner-item:nth-child(odd) input:checked~.text {
+    text-decoration: line-through 1px solid var(--third-background-color);
+    visibility: visible;
+    color: var(--third-background-color);
+}
+
+.diner-list .diner-item:nth-child(even) input:checked~.invisible,
+.diner-list .diner-item:nth-child(even) input:checked~.text {
+    text-decoration: line-through 1px solid var(--second-background-color);
+    visibility: visible;
+    color: var(--second-background-color);
+}
