@@ -186,9 +186,9 @@ input:checked+.mark::before {
 
 .diner-list .diner-item:nth-child(odd) input:checked~.invisible,
 .diner-list .diner-item:nth-child(odd) input:checked~.text {
-    text-decoration: line-through 1px solid var(--third-background-color);
+    text-decoration: line-through 1px solid var(--body-background-color);
     visibility: visible;
-    color: var(--third-background-color);
+    color: var(--body-background-color);
 }
 
 .diner-list .diner-item:nth-child(even) input:checked~.invisible,
